@@ -35,7 +35,6 @@ const Login = () => {
             photoURL: "https://example.com/jane-q-user/profile.jpg",
           })
             .then(() => {
-              console.log("Sign-up user: ", user);
               navigate("/browse");
             })
             .catch((error) => {
@@ -45,20 +44,17 @@ const Login = () => {
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          console.log("Sign-up Error: ", errorCode + " - " + errorMessage);
           setFormErrorMessage(errorCode + " - " + errorMessage);
         });
     } else {
       signInWithEmailAndPassword(auth, userEmail, userPassword)
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log("Sign-in user: ", user);
           navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          console.log("Sign-in Error: ", errorCode + " - " + errorMessage);
           setFormErrorMessage(errorCode + " - " + errorMessage);
         });
     }
