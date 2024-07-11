@@ -29,4 +29,4 @@ export const languagesContent = {
   },
 };
 
-export const OPENAI_KEY = "";
+export const OPENAI_KEY = "some_api_key";
